@@ -1,0 +1,32 @@
+.category-heading{
+  margin-left: 30px;
+  border-radius: 10px;
+ margin-bottom: -20px;
+}
+
+  .category-select {
+
+    margin-right: 16px;
+    width: 250px;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+  
+    // Style the "Show All Products" button
+    button {
+      background-color: #002b6b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+  
+      // Add hover effect
+      &:hover {
+        background-color: #001a40;
+      }
+    }
+  }
+  

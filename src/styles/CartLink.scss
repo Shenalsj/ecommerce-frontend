@@ -1,0 +1,16 @@
+.cart-link-text {
+  font-weight: bold;
+  color: #ffffff; 
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #002b6b; 
+  border-radius: 20px; 
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #002b6b;
+    color: white;
+  }
+}

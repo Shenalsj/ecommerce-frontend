@@ -1,0 +1,69 @@
+
+.profile-container {
+  text-align: center;
+  padding: 100px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* User info styles */
+.user-info {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* User data styles */
+.user-data {
+  p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  .avatar-image {
+    border-radius: 50%;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+/* Loading message styles */
+.loading-message {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .profile-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+ 
+}
