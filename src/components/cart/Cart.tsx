@@ -6,9 +6,10 @@ import {
   getTotalPrice,
   removeFromCart,
   updateQuantity,
-  checkoutCart,
+  clearCart,
 } from "../../features/cart/cartSlice";
 import "../../styles/Cart.scss";
+import { toast } from "react-toastify";
 
 export function Cart() {
   const dispatch = useAppDispatch();
@@ -30,7 +31,13 @@ export function Cart() {
 
   function onCheckout(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    dispatch(checkoutCart());
+    // dispatch(checkoutCart());
+    if (Object.entries(items).length === 0) {
+      toast.error("Cart is empty");
+      return;
+    }
+    dispatch(clearCart());
+    toast.success("Checkout Successful");
   }
 
   //classname library gives us a single class name string that includes multiple classnames in it

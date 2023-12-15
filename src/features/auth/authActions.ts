@@ -1,3 +1,4 @@
+//authActions.ts
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setCookies } from "../../utils/cookies";
@@ -27,7 +28,7 @@ export const loginAndStoreTokens = createAsyncThunk(
 
       return accessToken;
     } catch (error: any) {
-      // Handle login error here
+      // login error here
       return rejectWithValue(
         (error.response?.data || "An error occurred during login") as string
       );
@@ -54,7 +55,7 @@ export const refreshTokenAndStoreTokens = createAsyncThunk(
 
       return accessToken;
     } catch (error: any) {
-      // Handle refresh token error here
+      // refresh token error here
       return rejectWithValue(
         (error.response?.data ||
           "An error occurred while refreshing the token") as string
@@ -72,9 +73,6 @@ export const getProfile = createAsyncThunk(
   async (accessToken: string, { rejectWithValue }) => {
     try {
       const response = await api.post<User>("/profile", {
-        // headers: {
-        // Authorization: `Bearer ${accessToken}`,
-        // },
         token: accessToken,
       });
 

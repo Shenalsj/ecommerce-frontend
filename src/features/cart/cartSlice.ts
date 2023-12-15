@@ -54,6 +54,9 @@ const cartSlice = createSlice({
       const { id, quantity } = action.payload;
       state.items[id] = quantity;
     },
+    clearCart(state) {
+      state.items = {};
+    },
   },
   extraReducers: function (builder) {
     builder.addCase(checkoutCart.pending, (state, action) => {
@@ -75,17 +78,17 @@ const cartSlice = createSlice({
     );
     builder.addCase(checkoutCart.rejected, (state, action) => {
       state.checkoutState = "ERROR";
-      // state.errorMessage = action.error.message || "";
+
       toast.error("Checkout Error");
     });
   },
 });
 
-export const { addToCart, removeFromCart, updateQuantity } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateQuantity, clearCart } =
+  cartSlice.actions;
 export default cartSlice.reducer;
 
 export function getNumItems(state: RootState) {
-  console.log("Calling numItems");
   let numItems = 0;
   for (let id in state.cart.items) {
     numItems += state.cart.items[id];

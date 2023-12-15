@@ -36,7 +36,7 @@ const Category: React.FC<CategoryProps> = ({ currentPage, setCurrentPage }) => {
     setSelectedCategory(categoryId);
   };
 
-  console.log(products);
+
   useEffect(() => {
     const productsPerPage = 12;
     const startIndex = (currentPage - 1) * productsPerPage;
@@ -71,7 +71,7 @@ const Category: React.FC<CategoryProps> = ({ currentPage, setCurrentPage }) => {
             >
               <MenuItem value="">Select Category</MenuItem>
               {categories.map((category) => (
-                <MenuItem key={category.catId} value={category.catId}>
+                <MenuItem key={category._id} value={category._id}>
                   {category.name}
                 </MenuItem>
               ))}

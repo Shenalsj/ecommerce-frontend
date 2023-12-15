@@ -5,7 +5,7 @@ import {
   Product,
   UpdateProductRequest,
 } from "../types/productTypes";
-//
+
 export async function getProducts(): Promise<Product[]> {
   try {
     const response = await axios.get<Product[]>(

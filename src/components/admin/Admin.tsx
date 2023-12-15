@@ -35,9 +35,19 @@ const Admin: React.FC = () => {
           <Button
             variant="contained"
             style={{ backgroundColor: "#002b6b", color: "white" }}
+            sx={{ mr: 2 }}
           >
             {" "}
             Add New Product
+          </Button>
+        </Link>
+        <Link to="/admin/add-category">
+          <Button
+            variant="contained"
+            style={{ backgroundColor: "#002b6b", color: "white" }}
+          >
+            {" "}
+            Add New Category
           </Button>
         </Link>
       </Box>

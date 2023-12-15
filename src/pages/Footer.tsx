@@ -9,7 +9,7 @@ function Copyright() {
     <Typography variant="body2" color="#ffffff">
       {"Copyright © "}
       <Link color="inherit" href="">
-        Name
+        Shenal
       </Link>{" "}
       {new Date().getFullYear()}
       {" All rights reserved."}
@@ -33,7 +33,7 @@ export default function StickyFooter() {
       >
         <Container maxWidth="sm">
           <Typography variant="body1" color="white">
-            Frontend
+            e-commerce
           </Typography>
           <Copyright />
         </Container>

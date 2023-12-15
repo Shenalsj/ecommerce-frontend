@@ -2,10 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 interface Category {
-  id: number;
   name: string;
-  image: string;
-  catId: string;
+  _id: string;
 }
 
 interface CategoryState {

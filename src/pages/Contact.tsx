@@ -10,6 +10,7 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import emailjs from "emailjs-com";
 
 interface FormData {
   name: string;
@@ -30,17 +31,37 @@ const ContactForm: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Clear the form fields
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      // emailjs template ID and user ID
+      const templateParams = {
+        from_name: formData.name,
+        reply_to: formData.email,
+        message: formData.message,
+      };
 
-    // Show a success toast
-    toast.success("Message sent successfully!", {
-      position: "top-center",
-      autoClose: 3000, // Auto-close the toast after 3 seconds
-    });
+      await emailjs.send(
+        "service_7ycx3wr",
+        "template_ru9o84i",
+        templateParams,
+        "jaMnOag0_039ihINb"
+      );
+
+      setFormData({ name: "", email: "", message: "" });
+
+      toast.success("Message sent successfully!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("Error sending message. Please try again later.", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+    }
   };
 
   return (

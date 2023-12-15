@@ -66,7 +66,7 @@ const SearchInput: React.FC = () => {
     try {
       // API call to search products by title
       const response = await fetch(
-        `https://api.escuelajs.co/api/v1/products/?name=${term}`
+        `http://localhost:8080/api/v1/products/${term}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch search results");
@@ -74,7 +74,7 @@ const SearchInput: React.FC = () => {
 
       const searchResults: Product[] = await response.json();
 
-      // Dispatch the search action with the search results
+
       dispatch(setSearchResults(searchResults));
     } catch (error) {
       console.error("Error searching products:", error);

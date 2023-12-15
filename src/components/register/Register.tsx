@@ -1,3 +1,4 @@
+//Register.tsx
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -34,7 +35,6 @@ function Copyright(props: any) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function SignUp() {
@@ -68,13 +68,10 @@ export default function SignUp() {
     axios
       .post("http://localhost:8080/api/v1/users/signup", userObj)
       .then((res) => {
-        console.log(res);
-        console.log(res.data);
         toast.success("Registration Successful!");
         navigate("/login");
       })
       .catch((err) => {
-        console.log(err);
         toast.error("Registration failed. Please try again!");
       })
       .finally(() => {

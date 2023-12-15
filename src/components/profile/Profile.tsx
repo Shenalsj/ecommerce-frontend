@@ -1,3 +1,4 @@
+//Profile.ts
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -48,7 +49,6 @@ const Profile: React.FC = () => {
             )}
             <p>Name: {profile.name}</p>
             <p>Email: {profile.email}</p>
-            <p>Role: {profile.role}</p>
 
             <button onClick={handleLogout}>Logout</button>
           </div>

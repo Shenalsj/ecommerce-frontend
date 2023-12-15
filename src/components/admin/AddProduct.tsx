@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import {
   Box,
   TextField,
@@ -13,15 +13,29 @@ import { toast } from "react-toastify";
 
 import { postNewProduct } from "../../app/api";
 
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, AppDispatch } from "../../app/store";
+import { fetchCategories } from "../../features/category/categorySlice";
+
 const AddProduct: React.FC = () => {
-  const [productData, setProductData] = React.useState({
+  const dispatch = useDispatch<AppDispatch>();
+  const categories = useSelector(
+    (state: RootState) => state.categories.categories
+  );
+
+  const [productData, setProductData] = useState({
     name: "",
     price: "",
     description: "",
     categoryId: "",
     image: "",
   });
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // Fetch categories from the API when the component mounts
+    dispatch(fetchCategories());
+  }, [dispatch]);
 
   const handleInputChange = (e: any) => {
     setProductData({
@@ -103,11 +117,11 @@ const AddProduct: React.FC = () => {
             name="categoryId"
             id="category"
           >
-            <MenuItem value={"1"}>Clothes</MenuItem>
-            <MenuItem value={"2"}>Shoes</MenuItem>
-            <MenuItem value={"3"}>Electronics</MenuItem>
-            <MenuItem value={"4"}>Furniture</MenuItem>
-            <MenuItem value={"5"}>Others</MenuItem>
+            {categories.map((category) => (
+              <MenuItem key={category._id} value={category._id}>
+                {category.name}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
         <TextField
