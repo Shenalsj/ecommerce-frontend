@@ -43,10 +43,10 @@ const ContactForm: React.FC = () => {
       };
 
       await emailjs.send(
-        "service_7ycx3wr",
-        "template_ru9o84i",
+        "EMAILJS_SERVICE_ID",
+        "EMAILJS_TEMPLATE_ID",
         templateParams,
-        "jaMnOag0_039ihINb"
+        "EMAILJS_USER_ID"
       );
 
       setFormData({ name: "", email: "", message: "" });
@@ -124,3 +124,5 @@ const ContactForm: React.FC = () => {
 };
 
 export default ContactForm;
+
+
