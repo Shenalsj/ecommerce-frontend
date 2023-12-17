@@ -30,7 +30,6 @@ export const checkoutCart = createAsyncThunk(
     return response;
   }
 );
-//used createAsyncThunk to generate a action creator which I named checkoutCart dispatched action based on checkout api call those reactions are pending, fulfilled and rejected are cases in the extra reduces function rather than building thunk functions by hand createAsyncThunk generates dispatched appropriate actions.
 
 const cartSlice = createSlice({
   name: "cart",
@@ -95,7 +94,7 @@ export function getNumItems(state: RootState) {
   }
   return numItems;
 }
-//memoize the calculation of the total number of items in the cart
+
 export const getMemoizedNumItems = createSelector(
   (state: RootState) => state.cart.items,
   (items) => {

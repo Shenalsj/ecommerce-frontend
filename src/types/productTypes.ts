@@ -19,6 +19,9 @@ export interface Product {
   imageCredit: string;
   categoryId: string;
   category: Category;
+  rating:number
+  numReviews: number;
+
 }
 
 export interface CreateProductRequest {

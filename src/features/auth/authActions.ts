@@ -1,4 +1,3 @@
-//authActions.ts
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setCookies } from "../../utils/cookies";
@@ -18,7 +17,7 @@ export const loginAndStoreTokens = createAsyncThunk(
   async (credentials: LoginCredentials, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/users/login",
+        "https://test-gold-delta.vercel.app/api/v1/users/login",
         credentials
       );
 
@@ -28,7 +27,6 @@ export const loginAndStoreTokens = createAsyncThunk(
 
       return accessToken;
     } catch (error: any) {
-      // login error here
       return rejectWithValue(
         (error.response?.data || "An error occurred during login") as string
       );
@@ -45,7 +43,7 @@ export const refreshTokenAndStoreTokens = createAsyncThunk(
       };
 
       const response = await axios.post(
-        "http://localhost:8080/api/v1/users/refresh-token",
+        "https://test-gold-delta.vercel.app/api/v1/users/refresh-token",
         body
       );
 
@@ -55,7 +53,6 @@ export const refreshTokenAndStoreTokens = createAsyncThunk(
 
       return accessToken;
     } catch (error: any) {
-      // refresh token error here
       return rejectWithValue(
         (error.response?.data ||
           "An error occurred while refreshing the token") as string
@@ -65,7 +62,7 @@ export const refreshTokenAndStoreTokens = createAsyncThunk(
 );
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api/v1/users",
+  baseURL: "https://test-gold-delta.vercel.app/api/v1/users",
 });
 
 export const getProfile = createAsyncThunk(

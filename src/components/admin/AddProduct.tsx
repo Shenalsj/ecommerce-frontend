@@ -33,7 +33,6 @@ const AddProduct: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Fetch categories from the API when the component mounts
     dispatch(fetchCategories());
   }, [dispatch]);
 

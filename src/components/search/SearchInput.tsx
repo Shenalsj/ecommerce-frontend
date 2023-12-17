@@ -6,7 +6,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import { setSearchResults } from "../../features/product/productSlice";
 import { Product } from "../../types/productTypes";
 
-// Debounce function to delay API calls
 function debounce<T>(fn: (arg: T) => void, delay: number) {
   let timeoutId: NodeJS.Timeout | undefined;
   return function (arg: T) {
@@ -61,10 +60,8 @@ const SearchInput: React.FC = () => {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Debounce the API call with a delay of 300 milliseconds
   const debouncedSearch = debounce(async (term: string) => {
     try {
-      // API call to search products by title
       const response = await fetch(
         `http://localhost:8080/api/v1/products/${term}`
       );
@@ -74,12 +71,11 @@ const SearchInput: React.FC = () => {
 
       const searchResults: Product[] = await response.json();
 
-
       dispatch(setSearchResults(searchResults));
     } catch (error) {
       console.error("Error searching products:", error);
     }
-  }, 300); // To Adjust the delay here
+  }, 300);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = event.target.value;

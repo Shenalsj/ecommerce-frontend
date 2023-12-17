@@ -1,4 +1,3 @@
-//Register.tsx
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -66,7 +65,7 @@ export default function SignUp() {
 
     setLoading(true);
     axios
-      .post("http://localhost:8080/api/v1/users/signup", userObj)
+      .post("https://test-gold-delta.vercel.app/api/v1/users/signup", userObj)
       .then((res) => {
         toast.success("Registration Successful!");
         navigate("/login");
@@ -188,3 +187,4 @@ export default function SignUp() {
     </ThemeProvider>
   );
 }
+

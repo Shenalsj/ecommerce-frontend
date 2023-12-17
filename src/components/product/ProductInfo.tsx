@@ -1,10 +1,11 @@
 import React from "react";
 import { Typography, Button } from "@mui/material";
 import { useDispatch } from "react-redux";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 import { addToCart } from "../../features/cart/cartSlice";
 import { Product } from "../../types/productTypes";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Rating from "../Rating";
 
 interface ProductInfoProps {
   product: Product | null;
@@ -19,7 +20,6 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
     }
   };
 
-  //common JSX
   return (
     <>
       <Typography
@@ -30,9 +30,11 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
       >
         {product?.name}
       </Typography>
+
       <Typography fontSize={20} gutterBottom style={{ textAlign: "left" }}>
         Description: {product?.description}
       </Typography>
+      <Rating rating={product?.rating || 0} />
       <Typography gutterBottom fontSize={18} style={{ textAlign: "left" }}>
         Price: ${product?.price}
       </Typography>

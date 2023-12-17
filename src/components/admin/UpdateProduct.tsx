@@ -13,14 +13,12 @@ const UpdateProduct: React.FC = () => {
     price: 0,
   });
 
-  //   Get product id from url
   const { productId } = useParams<{ productId: string }>();
 
   const navigate = useNavigate();
-  //Retrieve data from the Redux store
+
   const products = useAppSelector((state) => state.product.products);
 
-  //fetch and initialize product data when the productId changes
   useEffect(() => {
     if (productId) {
       const p = products[productId];
@@ -31,7 +29,6 @@ const UpdateProduct: React.FC = () => {
     }
   }, [productId]);
 
-  //   handle input change tp
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setProduct({
       ...product,
@@ -39,7 +36,6 @@ const UpdateProduct: React.FC = () => {
     });
   };
 
-  // function to update product
   const handleUpdate = () => {
     setLoading(true);
     if (productId) {

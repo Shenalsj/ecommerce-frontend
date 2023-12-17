@@ -18,7 +18,6 @@ const Admin: React.FC = () => {
     });
   }, []);
 
-  //   Pagination Logic
   const productsPerPage = 12;
   const totalProducts = Object.values(products).length;
   const totalPages = Math.ceil(totalProducts / productsPerPage);

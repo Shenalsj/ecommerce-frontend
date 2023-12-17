@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 import { Product } from "../../types/productTypes";
 
-
 interface CategoryProductsProps {
   categoryId: string;
 }
@@ -32,9 +31,6 @@ const CategoryProducts: React.FC<CategoryProductsProps> = ({ categoryId }) => {
   return (
     <div>
       <h2>Products in this Category {name}</h2>
-      {/* {products.map((product) => (
-        <ProductDetailCard key={product._id} product={product} />
-      ))} */}
     </div>
   );
 };

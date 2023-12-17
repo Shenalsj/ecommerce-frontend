@@ -23,7 +23,7 @@ export const fetchCategories = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get<Category[]>(
-        "http://localhost:8080/api/v1/categories"
+        "https://test-gold-delta.vercel.app/api/v1/categories"
       );
       return response.data;
     } catch (error) {

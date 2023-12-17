@@ -1,4 +1,3 @@
-//App.tsx
 import React, { lazy, Suspense } from "react";
 import Home from "./pages/Home";
 import "./App.scss";

@@ -9,7 +9,6 @@ html, body, #root {
   min-height: 100vh;
 
   &.dark-mode {
-    // Define dark mode styles here
     background-color: #1a1a1a;
     color: #fff;
   }
@@ -17,8 +16,7 @@ html, body, #root {
 }
 
 .app-header {
-  // background-color: #ffffff;
-  // padding: 10px 0;
+ 
 
   nav {
     display: flex;
@@ -52,4 +50,8 @@ html, body, #root {
 
 footer {
   margin-top: auto;
+}
+
+.rating span{
+  color: gold;
 }

@@ -28,14 +28,12 @@ const Category: React.FC<CategoryProps> = ({ currentPage, setCurrentPage }) => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   useEffect(() => {
-    // Fetch categories from the API when the component mounts
     dispatch(fetchCategories());
   }, [dispatch]);
 
   const handleCategoryClick = (categoryId: string) => {
     setSelectedCategory(categoryId);
   };
-
 
   useEffect(() => {
     const productsPerPage = 12;

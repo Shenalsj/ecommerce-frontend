@@ -10,7 +10,7 @@ import "../../styles/ProductDetailPage.scss";
 
 const ProductDetailPage = () => {
   const [product, setProduct] = useState<Product | null>(null);
-  const { productId } = useParams<{ productId: string }>(); // Updated type to ensure productId is always a string
+  const { productId } = useParams<{ productId: string }>(); 
   const products = useAppSelector((state) => state.product.products);
 
   useEffect(() => {

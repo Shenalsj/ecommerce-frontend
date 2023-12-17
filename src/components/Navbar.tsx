@@ -65,7 +65,6 @@ function Navbar({ toggleTheme }: { toggleTheme: () => void }) {
     <AppBar position="static" sx={{ backgroundColor: "#002b6b" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* Hamburger Menu Icon */}
           <IconButton
             color="inherit"
             onClick={handleDrawerOpen}
@@ -74,7 +73,6 @@ function Navbar({ toggleTheme }: { toggleTheme: () => void }) {
             <MenuIcon />
           </IconButton>
 
-          {/* Logo */}
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
@@ -94,7 +92,6 @@ function Navbar({ toggleTheme }: { toggleTheme: () => void }) {
             LOGO
           </Typography>
 
-          {/* Navigation Links */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -129,7 +126,6 @@ function Navbar({ toggleTheme }: { toggleTheme: () => void }) {
 
           {profile && profile.id ? (
             <Box sx={{ flexGrow: 0 }}>
-              {/* Profile Image and Menu */}
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
@@ -143,7 +139,6 @@ function Navbar({ toggleTheme }: { toggleTheme: () => void }) {
                 </IconButton>
               </Tooltip>
 
-              {/* Profile Menu */}
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appbar"
@@ -171,7 +166,6 @@ function Navbar({ toggleTheme }: { toggleTheme: () => void }) {
               </Menu>
             </Box>
           ) : (
-            // Login Button
             <Button>
               <Link
                 to="/login"
@@ -182,7 +176,6 @@ function Navbar({ toggleTheme }: { toggleTheme: () => void }) {
             </Button>
           )}
 
-          {/* Cart and Theme Toggle */}
           <CartLink />
           <IconButton onClick={toggleTheme} sx={{ ml: 2, p: 0 }}>
             <Brightness4Icon sx={{ color: "white" }} />
@@ -190,7 +183,6 @@ function Navbar({ toggleTheme }: { toggleTheme: () => void }) {
         </Toolbar>
       </Container>
 
-      {/* Drawer for Small Screens */}
       <Drawer
         anchor="left"
         open={isDrawerOpen}

@@ -17,7 +17,7 @@ export function Cart() {
   const products = useAppSelector((state) => state.product.products);
   const items = useAppSelector((state) => state.cart.items);
   const totalPrice = useAppSelector(getTotalPrice);
-  const checkoutState = useAppSelector((state) => state.cart.checkoutState); //state.cart is of type CartState not a string
+  const checkoutState = useAppSelector((state) => state.cart.checkoutState); 
 
   const errorMessage = useAppSelector((state) => state.cart.errorMessage);
 
@@ -31,7 +31,7 @@ export function Cart() {
 
   function onCheckout(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // dispatch(checkoutCart());
+  
     if (Object.entries(items).length === 0) {
       toast.error("Cart is empty");
       return;
@@ -40,7 +40,7 @@ export function Cart() {
     toast.success("Checkout Successful");
   }
 
-  //classname library gives us a single class name string that includes multiple classnames in it
+ 
   const tableClasses = classNames({
     table: true,
     checkoutError: checkoutState === "ERROR",

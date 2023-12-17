@@ -1,4 +1,3 @@
-//Profile.ts
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +21,7 @@ const Profile: React.FC = () => {
   }, [dispatch, accessToken, profile]);
 
   const handleLogout = () => {
-    // Dispatch the logout action to clear user data
+ 
     dispatch(logout());
 
     navigate("/");

@@ -1,4 +1,4 @@
-//SignIn.tsx
+
 import { Fragment, useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -37,21 +37,21 @@ const SignIn: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  //display error
+
   useEffect(() => {
     if (error) {
       setShowError(true);
     }
   }, [error]);
 
-  //refreshing tokens
+
   useEffect(() => {
     if (refreshToken && !accessToken && !profile) {
       dispatch(refreshTokenAndStoreTokens(refreshToken));
     }
   }, [dispatch, accessToken, profile, refreshToken]);
 
-  //fetching user profile
+
   useEffect(() => {
     if (accessToken && !profile) {
       dispatch(getProfile(accessToken));
@@ -75,7 +75,6 @@ const SignIn: React.FC = () => {
   return (
     <Fragment>
       <Container maxWidth="xs">
-        {/* Check if role is admin and navigate to admin page, else profile page */}
         {profile && (
           <Navigate
             to={profile.role === ADMIN_ROLE ? "/admin" : "/profile"}
