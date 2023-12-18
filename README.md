@@ -63,7 +63,9 @@ Make sure you have Node.js and npm installed on your machine.
 
 2. run npm install
 
-3. npm start
+3. Change the .env details for the contact 
+
+4. npm start
   
 
 

@@ -9,7 +9,7 @@ import {
 export async function getProducts(): Promise<Product[]> {
   try {
     const response = await axios.get<Product[]>(
-      "https://test-gold-delta.vercel.app/api/v1/products"
+      `${process.env.REACT_APP_API_BASE_URL}/api/v1/products`
     );
     return response.data;
   } catch (error) {
@@ -23,7 +23,7 @@ export async function postNewProduct(
   try {
    
     const { data } = await axios.post<ProductResponse>(
-      "https://test-gold-delta.vercel.app/api/v1/products/",
+      `${process.env.REACT_APP_API_BASE_URL}/api/v1/products/`,
       productData
     );
     return data;
@@ -39,7 +39,7 @@ export async function updateProduct({
 }: UpdateProductRequest): Promise<ProductResponse> {
   try {
     const { data } = await axios.put<ProductResponse>(
-      `https://test-gold-delta.vercel.app/api/v1/products/${_id}`,
+      `${process.env.REACT_APP_API_BASE_URL}/api/v1/products/${_id}`,
       { name, price }
     );
     return data;
@@ -51,7 +51,7 @@ export async function updateProduct({
 export async function deleteProduct(id: string): Promise<boolean> {
   try {
     const { data } = await axios.delete<boolean>(
-      `https://test-gold-delta.vercel.app/api/v1/products/${id}`
+      `${process.env.REACT_APP_API_BASE_URL}/api/v1/products/${id}`
     );
     return data;
   } catch (error: any) {

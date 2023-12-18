@@ -65,7 +65,7 @@ export default function SignUp() {
 
     setLoading(true);
     axios
-      .post("https://test-gold-delta.vercel.app/api/v1/users/signup", userObj)
+      .post(`${process.env.REACT_APP_API_BASE_URL}/api/v1/users/signup`, userObj)
       .then((res) => {
         toast.success("Registration Successful!");
         navigate("/login");

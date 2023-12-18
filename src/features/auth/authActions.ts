@@ -17,7 +17,7 @@ export const loginAndStoreTokens = createAsyncThunk(
   async (credentials: LoginCredentials, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "https://test-gold-delta.vercel.app/api/v1/users/login",
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/users/login`,
         credentials
       );
 
@@ -43,7 +43,7 @@ export const refreshTokenAndStoreTokens = createAsyncThunk(
       };
 
       const response = await axios.post(
-        "https://test-gold-delta.vercel.app/api/v1/users/refresh-token",
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/users/refresh-token`,
         body
       );
 
@@ -62,7 +62,7 @@ export const refreshTokenAndStoreTokens = createAsyncThunk(
 );
 
 const api = axios.create({
-  baseURL: "https://test-gold-delta.vercel.app/api/v1/users",
+  baseURL: `${process.env.REACT_APP_API_BASE_URL}/api/v1/users`,
 });
 
 export const getProfile = createAsyncThunk(

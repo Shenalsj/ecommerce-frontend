@@ -20,7 +20,7 @@ const AddCategory: React.FC = () => {
   const handleCreate = () => {
     setLoading(true);
     axios
-      .post("https://test-gold-delta.vercel.app/api/v1/categories", categoryData)
+      .post(`${process.env.REACT_APP_API_BASE_URL}/api/v1/categories`, categoryData)
       .then((res) => {
         toast.success("Category Created Successfully");
         setCategoryData({

@@ -43,10 +43,10 @@ const ContactForm: React.FC = () => {
       };
 
       await emailjs.send(
-        "service_7ycx3wr",
-        "template_ru9o84i",
+        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!,
         templateParams,
-        "jaMnOag0_039ihINb"
+        process.env.REACT_APP_EMAILJS_USER_ID
       );
 
       setFormData({ name: "", email: "", message: "" });

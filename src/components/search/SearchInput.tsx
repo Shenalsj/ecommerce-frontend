@@ -63,7 +63,7 @@ const SearchInput: React.FC = () => {
   const debouncedSearch = debounce(async (term: string) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/products/${term}`
+        `${process.env.REACT_APP_API_BASE_URL}/api/v1/products/${term}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch search results");
