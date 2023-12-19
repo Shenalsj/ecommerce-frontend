@@ -1,3 +1,4 @@
+//productSlice.ts
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type {
   CreateProductRequest,

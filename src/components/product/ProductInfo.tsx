@@ -1,3 +1,4 @@
+//ProductInfo.tsx
 import React from "react";
 import { Typography, Button } from "@mui/material";
 import { useDispatch } from "react-redux";

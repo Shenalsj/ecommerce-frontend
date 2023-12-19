@@ -1,3 +1,4 @@
+//AddProduct.tsx
 import { useState, useEffect } from "react";
 import {
   Box,

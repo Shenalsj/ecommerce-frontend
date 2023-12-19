@@ -1,3 +1,4 @@
+//CartLink.tsx
 import "../../styles/CartLink.scss";
 import { useAppSelector } from "../../app/hooks";
 import { getMemoizedNumItems } from "../../features/cart/cartSlice";

@@ -1,3 +1,4 @@
+//authSlice.ts
 import { createSlice } from "@reduxjs/toolkit";
 
 import { removeCookies } from "../../utils/cookies";
@@ -80,3 +81,4 @@ export const authSlice = createSlice({
 export const { logout } = authSlice.actions;
 
 export default authSlice.reducer;
+

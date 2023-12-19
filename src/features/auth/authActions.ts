@@ -1,3 +1,4 @@
+//authActions.ts
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setCookies } from "../../utils/cookies";

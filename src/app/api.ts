@@ -1,3 +1,4 @@
+//api.ts
 import axios from "axios";
 import {
   CreateProductRequest,
@@ -78,3 +79,7 @@ export async function checkout(items: CartItems): Promise<CheckoutResponse> {
 }
 
 const sleep = (time: number) => new Promise((res) => setTimeout(res, time));
+
+
+
+

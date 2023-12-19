@@ -45,6 +45,9 @@ Welcome to our eCommerce React application! This project is built with React, Ty
 
 10. **Light Mode and Dark Mode:**
     - Switch between light mode and dark mode for a personalized visual experience.
+
+11. **Private Routes for Admin:**
+    - Only Admin is allowed to add products and categories.
     
 
 ## Getting Started
@@ -63,10 +66,8 @@ Make sure you have Node.js and npm installed on your machine.
 
 2. run npm install
 
-3. Change the .env details for the contact 
-
-4. npm start
+3. npm start
   
-
+Check out at => https://euphonious-cendol-d45519.netlify.app/
 
    

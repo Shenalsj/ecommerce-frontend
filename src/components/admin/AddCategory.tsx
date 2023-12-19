@@ -1,3 +1,4 @@
+//AddCategory.tsx
 import React from "react";
 import { Box, TextField, Typography, Button } from "@mui/material";
 import { toast } from "react-toastify";
